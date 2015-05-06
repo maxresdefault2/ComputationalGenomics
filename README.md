@@ -42,17 +42,21 @@ NOTE: The output of our population trees (calculated by the following method) is
 7) Download treemix!
   First, download the Boost Graph Library and the GNU Scientific Library.
   Next, install:
-    >tar -xvf treemix-1.12.tar.gz
-    >cd treemix-1.12
-    >./configure
-    >make
-    >make install
+  >tar -xvf treemix-1.12.tar.gz
+  
+  >cd treemix-1.12
+  
+  >./configure
+  
+  >make
+  
+  >make install
     
 8) Run through treemix!
   Make sure the file "Mybacgenus_mybacspecies_final.gz" is in the treemix-1.12 directory.
-  Run:
+  To build a plain tree:
   >treemix -i "Mybacgenus_mybacspecies_final.gz" -o "Mybacgenus_mybacspecies"
-  to build a plain tree.
+  
   To build a tree with a number of migrations:
   >treemix -i "Mybacgenus_mybacspecies_final.gz" -m <#migrations> -o "Mybacgenus_mybacspecies"
   
