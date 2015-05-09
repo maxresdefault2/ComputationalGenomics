@@ -77,9 +77,9 @@ newal.py- This file generates allele frequencies. It finds the major and minor
 	
 abrfile.py- This file takes in the allele frequency file generated in newal.py, 
 	and removes all lines that are duplicates, making sure only there is 
-	only one of each allele frequency line. This method is done as it was by 
-	the treemix devs, because having will not affect the data, but will incur 
-	a much higher time cost to treemix's running time.
+	only one of each allele frequency line. This method is done as it was 
+	by the treemix devs, because having will not affect the data, but will
+	incur a much higher time cost to treemix's running time.
 	
 
 ~~~~~~~~~~~~~~~~~~ I/O files ~~~~~~~~~~~~~~~~~~~~
@@ -111,8 +111,8 @@ genus_species_clust.txt- This is the output of the MAFFT aligner. It contains
 genus_species_clust_rw.txt- This is the rewritten version of 
 	"genus_species_clust.txt", which removes all non-sequence characters 
 	and text, and replaces all mismatches, which are written as '-' in 
-	the MAFFT output,	as 'X'. This is done to make the later text files
-	not skip to a new line when a '-' is encountered.
+	the MAFFT output,	as 'X'. This is done to make the later text 
+	files not skip to a new line when a '-' is encountered.
 	
 genus_species_clust_out_int.txt- This file contains the concatenated versions
 	of each individual, with the proper names of the individuals at the top 
@@ -132,12 +132,12 @@ genus_species_clust_allele_out_ind.txt- This file contains the same lines from
 	"genus_species_clust_allele_out.txt", except duplicate lines of allele 
 	frequencies are removed. 
 	
-genus_species_end- This is the final allele frequency file, after final formatting
-	and final check to make sure that the allele frequency where all lines are the
-	same major allele match. This should have already been done, and is a fragment
-	from the previous version of the code, but it is kept in just as a fail-safe. 
-	This file is zipped, therefore the file itself will not be found in the 
-	directory.
+genus_species_end- This is the final allele frequency file, after final 
+	formatting and final check to make sure that the allele frequency where 
+	all lines are the same major allele match. This should have already been
+	done, and is a fragment	from the previous version of the code, but it is
+	kept in just as a fail-safe. This file is zipped, therefore the file
+	itself will not be found in the directory.
 	
 genus_species_end.gz- This is the final zipped version of the allele frequency 
 	file, ready to be inserted into treemix.
