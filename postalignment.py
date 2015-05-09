@@ -16,7 +16,7 @@ if __name__== '__main__':
 	print "Getting rid of instances of homozygosity or repeats..."
 	abrfiles.main(nameofbac)
 	print "Done with allele frequency file"
-	os.system("gzip "+nameofbac+"_final")
+	os.system("gzip "+nameofbac+"_end")
 	print "The allele frequency file has been zipped and is ready to run through treemix"
 	print "The name of this file is:"
-	print nameofbac+"_final.gz"
+	print nameofbac+"_end.gz"

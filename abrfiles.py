@@ -25,7 +25,7 @@ def main(nameofbac):
 	
 	# Reopen the file just made
 	fname=nameofbac+"_clust_allele_out_ind"
-	fo = open(nameofbac+"_final", "wb")
+	fo = open(nameofbac+"_end", "wb")
 	with open(fname) as f:
 		content = f.readlines()
 		first=content[0].split()
