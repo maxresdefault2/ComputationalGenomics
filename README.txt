@@ -146,6 +146,56 @@ genus_species_end.gz- This is the final zipped version of the allele frequency
 	
 ---------------------------How to run the example--------------------
 
+For this example, we will be using one of the smaller species that we
+tested (smaller because the BLAST database did not hold many individuals),
+Alteromonas macleodii. 
+
+1) Make sure BLAST, treemix, and the bacteria from NCBI is downloaded.
+   For info on this, see the next section on running your own bacteria,
+   parts 1, 2 and 7.
+   
+2) Download all .py files, as well as the file:
+   Alteromonas_macleodii.GCA_000808595.1.26.cds.all.fa
+   Make sure this file, prealignment.py, combine.py, newpullseqs.py, 
+   pullhigh.py and getbestseqs.py are in the BLAST directory, and
+   all other python files are in the treemix directory. 
+   
+3) Run prealignment.py. On the first prompt, enter in:
+   >Alteromonas macleodii
+   On the second prompt, enter:
+   >Alteromonas_macleodii.GCA_000808595.1.26.cds.all.fa
+   
+4) You should now send the resulting file: 
+   "Alteromonas_macleodii_final.txt" into MAFFT at
+   http://mafft.cbrc.jp/alignment/server/index.html
+   However, because this will take a while, we have included the
+   output file here. Download:
+   "Alteromonas_macleodii_clust.txt" and put it in the same
+   directory with the postalignment.py code (and all code
+   that runs via postalignment.py). This should be in the 
+   treemix directory.
+   
+5) Run postalignment.py. On the first prompt, enter:
+   >Alteromonas macleodii
+   On the second prompt, enter:
+   >ATCC27126 BalearicSea EnglishChannel BlackSea
+   Make sure these are separated by one space, and there is no
+   leading or trailing space.
+   
+6) After this code finishes, you should have a file in the
+   directory named "Alteromonas_macleodii_end.gz".
+   
+7) In a shell, cd into the treemix directory. Run the
+   following:
+   >treemix -i Alteromonas_macleodii_end.gz -o 
+    Alteromonas_macleodii
+	
+8) After this finishes, run R, change the source to
+   "home/user/treemix-1.12/src/plotting_funcs.R", then run 
+   the following:
+   >plot_tree("home/user/treemix-1.12/Alteromonas_macleodii")
+   A tree should appear in the R image viewer.
+   
 -------------------------How to run your own bacteria-----------------
 
 NOTE: The output of our population trees (calculated by the following method) 
@@ -214,11 +264,11 @@ NOTE: The output of our population trees (calculated by the following method)
   Make sure the file "Mybacgenus_mybacspecies_final.gz" is in the 
   treemix-1.12 directory.
   To build a plain tree:
-  >treemix -i "Mybacgenus_mybacspecies_final.gz" -o 
+  >treemix -i "Mybacgenus_mybacspecies_end.gz" -o 
    "Mybacgenus_mybacspecies"
   
   To build a tree with a number of migrations:
-  >treemix -i "Mybacgenus_mybacspecies_final.gz" -m <#migrations> -o
+  >treemix -i "Mybacgenus_mybacspecies_end.gz" -m <#migrations> -o
    "Mybacgenus_mybacspecies"
   
   
