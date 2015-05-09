@@ -146,54 +146,60 @@ genus_species_end.gz- This is the final zipped version of the allele frequency
 	
 ---------------------------How to run the example--------------------
 
-For this example, we will be using one of the smaller species that we
-tested (smaller because the BLAST database did not hold many individuals),
-Alteromonas macleodii. 
+For this example, we will be using our focal species, Staphylococcus
+aureus. Since we end with a small runtime for all bacteria, this
+should be a fine example.
+
 
 1) Make sure BLAST, treemix, and the bacteria from NCBI is downloaded.
    For info on this, see the next section on running your own bacteria,
    parts 1, 2 and 7.
    
 2) Download all .py files, as well as the file:
-   Alteromonas_macleodii.GCA_000808595.1.26.cds.all.fa
+   Staphylococcus_aureus_11p4.GCA_000636755.1.26.cds.all.fa
    Make sure this file, prealignment.py, combine.py, newpullseqs.py, 
    pullhigh.py and getbestseqs.py are in the BLAST directory, and
    all other python files are in the treemix directory. 
    
 3) Run prealignment.py. On the first prompt, enter in:
-   >Alteromonas macleodii
+   >Staphylococcus aureus
    On the second prompt, enter:
-   >Alteromonas_macleodii.GCA_000808595.1.26.cds.all.fa
+   >Staphylococcus_aureus_11p4.GCA_000636755.1.26.cds.all.fa
+   This should run in under 5 minutes.
    
 4) You should now send the resulting file: 
-   "Alteromonas_macleodii_final.txt" into MAFFT at
+   "Staphylococcus_aureus_final.txt" into MAFFT at
    http://mafft.cbrc.jp/alignment/server/index.html
    However, because this will take a while, we have included the
    output file here. Download:
-   "Alteromonas_macleodii_clust.txt" and put it in the same
+   "Staphylococcus_aureus_clust.txt" and put it in the same
    directory with the postalignment.py code (and all code
    that runs via postalignment.py). This should be in the 
    treemix directory.
    
 5) Run postalignment.py. On the first prompt, enter:
-   >Alteromonas macleodii
+   >Staphylococcus aureus
    On the second prompt, enter:
-   >ATCC27126 BalearicSea EnglishChannel BlackSea
+   >JDK6159 71193 BBA02176 ST398 MRSA252 TCH60 HO5096 M1
+    USA300 Bmb9393
    Make sure these are separated by one space, and there is no
-   leading or trailing space.
+   leading or trailing space. This code should finish running
+   within 10 minutes (likely much less).
    
 6) After this code finishes, you should have a file in the
-   directory named "Alteromonas_macleodii_end.gz".
+   directory named "Staphylococcus_aureus_end.gz". This file
+   is also included, in case the user wishes to skip directly
+   to this part.
    
 7) In a shell, cd into the treemix directory. Run the
    following:
-   >treemix -i Alteromonas_macleodii_end.gz -o 
-    Alteromonas_macleodii
+   >treemix -i Staphylococcus_aureus_end.gz -m 2 -o 
+    Staphylococcus_aureus
 	
 8) After this finishes, run R, change the source to
    "home/user/treemix-1.12/src/plotting_funcs.R", then run 
    the following:
-   >plot_tree("home/user/treemix-1.12/Alteromonas_macleodii")
+   >plot_tree("home/user/treemix-1.12/Staphylococcus_aureus")
    A tree should appear in the R image viewer.
    
 -------------------------How to run your own bacteria-----------------
